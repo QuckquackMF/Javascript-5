@@ -1,0 +1,219 @@
+#hourlyForecast,
+#dailyForecast {
+    display: none;
+}
+
+body {
+    font-family: 'Red Hat Text', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: #25465f;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+p {
+    color: #000000;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.table {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table td {
+    padding: 10px 20px;
+}
+
+.btn-primary {
+    background-color: #0cdfdf;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1e3a4e;
+    transform: translateY(-2px);
+}
+
+/* Input Styles */
+.input_text {
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.input_text:focus {
+    border-color: #020202;
+    outline: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.table {
+    background-color: #dbc045;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow-x: auto;
+    transition: transform 0.3s ease;
+}
+
+.table:hover {
+    transform: translateY(-2px);
+}
+
+.table td {
+    padding: 15px;
+    font-size: 1.1rem;
+    color: #000000;
+    position: relative;
+}
+
+.table td:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(11, 185, 127, 0.2);
+    z-index: -1;
+}
+
+.table th {
+    padding: 15px;
+    font-size: 1.2rem;
+    color: #0915bb;
+}
+
+body {
+    background: #037dd4;
+}
+
+h1 {
+    background: #0356c2;
+    font-size: 1.75rem;
+    text-align: center;
+    padding: 18px 0;
+    color: #000000;
+}
+
+.container {
+    display: flex;
+    gap: 35px;
+    padding: 30px;
+}
+
+.weather-input {
+    width: 550px;
+}
+
+.weather-data {
+    width: 100%;
+}
+
+.current-weather {
+    color: #000000;
+    background: #5372F0;
+    border-radius: 5px;
+    padding: 20px 70px 20px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.current-weather h2 {
+    font-weight: 700;
+    font-size: 1.7rem;
+}
+
+.current-weather .details {
+    flex: 1;
+}
+
+.current-weather .icon {
+    text-align: center;
+    flex: 1;
+}
+
+.weather-cards .card {
+    color: #000000;
+    padding: 18px 16px;
+    list-style: none;
+    width: calc(100% / 5);
+    background: #812b2b;
+    border-radius: 5px;
+}
+
+.weather-cards .card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+@media (max-width: 750px) {
+    h1 {
+        font-size: 1.45rem;
+        padding: 16px 0;
+    }
+
+    .container {
+        flex-wrap: wrap;
+        padding: 15px;
+    }
+
+    .weather-input {
+        width: 100%;
+    }
+
+    .current-weather,
+    .weather-cards .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .current-weather {
+        padding: 20px;
+    }
+
+    .days-forecast h2 {
+        margin: 20px 0;
+        font-size: 1.5rem;
+    }
+
+    .weather-cards .card {
+        width: calc(50% - 10px);
+    }
+}

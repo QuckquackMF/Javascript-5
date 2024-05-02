@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenWeather</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="eventListeners.js"></script>
+    <script src="apiCalls.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+
+<div class="container" id="currentWeather">
+    <div class="container">
+        <div class="text-center mt-3">
+            <h1 class="h1">OpenWeather</h1>
+            <p class="p">Enter the city to view the current weather</p>
+            <input type="text" placeholder="Enter city" class="form-control input_text" id="cityInput">
+            <button class="btn btn-primary submit" id="submitButton">Search city</button>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <h2>Current Weather</h2>
+        <div class="container text-center mt-3">
+            <p class="p">Select an option:</p>
+            <button class="btn btn-primary weather-link" data-target="currentWeather">Current Weather</button>
+            <button class="btn btn-primary weather-link" data-target="hourlyForecast">Hourly Forecast 5 days Every 3h</button>
+            <button class="btn btn-primary weather-link" data-target="dailyForecast">Daily Forecast 16 days</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>City</td>
+                        <td id="name"></td>
+                    </tr>
+                    <tr>
+                        <td>Temperature (°C)</td>
+                        <td class="temp"></td>
+                    </tr>
+                    <tr>
+                        <td>Feels Like (°C)</td>
+                        <td class="feels-like"></td>
+                    </tr>
+                    <tr>
+                        <td>Pressure (hPa)</td>
+                        <td class="pressure"></td>
+                    </tr>
+                    <tr>
+                        <td>Humidity (%)</td>
+                        <td class="humidity"></td>
+                    </tr>
+                    <tr>
+                        <td>Dew Point (°C)</td>
+                        <td class="dew-point"></td>
+                    </tr>
+                    <tr>
+                        <td>UV Index</td>
+                        <td class="uvi"></td>
+                    </tr>
+                    <tr>
+                        <td>Clouds (%)</td>
+                        <td class="clouds"></td>
+                    </tr>
+                    <tr>
+                        <td>Visibility (m)</td>
+                        <td class="visibility"></td>
+                    </tr>
+                    <tr>
+                        <td>Wind Speed (m/s)</td>
+                        <td class="wind-speed"></td>
+                    </tr>
+                    <tr>
+                        <td>Wind Degree (°)</td>
+                        <td class="wind-deg"></td>
+                    </tr>
+                    <tr>
+                        <td>Wind Gust (m/s)</td>
+                        <td class="wind-gust"></td>
+                    </tr>
+                    <tr>
+                        <td>Sunrise</td>
+                        <td class="sunrise"></td>
+                    </tr>
+                    <tr>
+                        <td>Sunset</td>
+                        <td class="sunset"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="hourlyForecast">
+    <div class="text-center mt-3">
+        <h2>Hourly Forecast 4 days</h2>
+        <div class="container text-center mt-3">
+            <p class="p">Select an option:</p>
+            <button class="btn btn-primary weather-link" data-target="currentWeather">Current Weather</button>
+            <button class="btn btn-primary weather-link" data-target="hourlyForecast">Hourly Forecast 5 days Every 3h</button>
+            <button class="btn btn-primary weather-link" data-target="dailyForecast">Daily Forecast 16 days</button>
+        </div>
+        <form id="hourlyForecastForm">
+            <input type="text" placeholder="Enter city" class="form-control input_text" id="hourlyCityInput">
+            <button type="submit" class="btn btn-primary">Get Forecast</button>
+        </form>
+    </div>
+    <div class="mt-5">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Temperature (°C)</th>
+                    </tr>
+                </thead>
+                <tbody id="hourlyForecastTable">
+                    <!-- Forecast data qui-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="dailyForecast">
+    <div class="text-center mt-3">
+        <h2>Daily Forecast 16 days</h2>
+        <div class="container text-center mt-3">
+            <p class="p">Select an option:</p>
+            <button class="btn btn-primary weather-link" data-target="currentWeather">Current Weather</button>
+            <button class="btn btn-primary weather-link" data-target="hourlyForecast">Hourly Forecast 5 days Every 3h</button>
+            <button class="btn btn-primary weather-link" data-target="dailyForecast">Daily Forecast 16 days</button>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form id="dailyForecastForm">
+                    <div class="input-group">
+                        <input type="text" placeholder="Enter city" class="form-control input_text" id="dailyCityInput">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary">Get Forecast</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Temperature (°C)</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody id="dailyForecastTable">
+                    <!-- Forecast data qui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

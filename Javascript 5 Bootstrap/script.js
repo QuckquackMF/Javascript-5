@@ -20,7 +20,7 @@ function getWeather() {
 } 
 function displayWeather(data) { 
 	$('#city-name').text(`Weather in ${data.name}`); 
-	$('#date').text(moment().format('MMMM Do YYYY, h:mm:ss a')); 
+	$('#date').html(`<span style="font-weight: bold; font-size: 20px;">${moment().format('MMMM Do YYYY, h:mm:ss a')}</span>`); 
 	$('#temperature').html(`${data.main.temp}°C`); 
 	$('#description').text(data.weather[0].description); 
 	$('#wind-speed').html(`Wind Speed: ${data.wind.speed} m/s`); 
